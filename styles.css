@@ -1,0 +1,65 @@
+/* 
+    FLEXBOX es una caracteristica relativamente nueva
+    para distribuir elementos en CSS
+
+    GRID es una caracteristica relativamente nueva
+    para crear estructuras en CSS
+*/
+
+/*************** RESET ***************/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* PADRE -> Sujeto a flexiblizar */
+header {
+    width: 100%;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px 5%;
+    background-color: #FE3C3C;
+    column-gap: 4%;
+    & .nav-logo {
+        padding-top: 17px;
+        & img {
+            width: 175px;
+        }
+    }
+    & a {
+        font-size: 2rem;
+        color: #ffffff;
+    }
+    & .nav-menu {
+        /* HIJO de navigation pero a su vez es PADRE de navegaciones hijas nav-pages y nav-auth */
+        display: flex;
+        width: inherit;
+        justify-content: space-between;
+        & .nav-pages {
+            /* HIJO de nav-menu pero a su vez es PADRE de sus respectivos nav-items */
+            display: flex;
+            column-gap: 3%;
+            width: 60%;
+        }
+        & .nav-auth {
+            /* HIJO de nav-menu pero a su vez es PADRE de sus respectivos nav-items */
+            display: flex;
+            width: 40%;
+            column-gap: 4.5%;
+            justify-content: end;
+        }
+    }
+}
+
+  
+
